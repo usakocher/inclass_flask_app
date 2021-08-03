@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <section class="row">
+        <div class="col-12" id="middle-text">
+            <h2>Our Worldwide Network</h2>
+            <p>Bring the taste of the world into your own home. Check out our items below or contact us for special orders</p>
+            <div id="middle-buttons">
+                <button class="btn btn-secondary">Inventory</button>
+                <button class="btn btn-secondary">Contact Us</button>
+            </div>
+        </div>
+    </section>
+    <section class="row" id="fresh-items">
+        <h4>Check out our freshest items!</h4>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/avocado.jpg" alt="Avocados" id="avo-img">
+            <p>Avocados from Mexico</p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/mushrooms.jpg" alt="Mushrooms" id="mush-img">
+            <p>Mushrooms from Japan</p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/tomatoes.jpg" alt="Tomatoes" id="tom-img">
+            <p>Tomatoes from Italy</p>
+        </div>
+    </section>
+</div>
+<footer>
+    <div class="row">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Partners</a></li>
+            <li><a href="">Inventory</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </div>
+    <div id="footer-images">
+    <img src="../static/images/start.png" alt=""><img src="../static/images/groceries.png" alt="Logo">
+    </div>
+    <p>Adam's Groceries, &copy; 2021</p>
+</footer>
+{% endblock content %}

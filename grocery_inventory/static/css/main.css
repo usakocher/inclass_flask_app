@@ -1,0 +1,87 @@
+.banner-image{
+    background-image: url("../images/Stocksy_comp_603819.jpg");
+    background-size: cover;
+    color:white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+.navbarNav{
+    color: black;
+}
+
+#main{
+    font-size: 9vw;
+}
+
+.banner-image p{
+    font-size: 5vw;
+}
+
+.buttons a, .buttons li{
+    display: inline;
+    text-decoration: none;
+    padding: .5vw;
+    color: white;
+}
+
+.buttons a{
+    border: 2px solid white;
+    border-radius: 11px;
+    margin-right: 0.2vw;
+    margin-left: 1vw;
+}
+
+#middle-text{
+    text-align: center;
+    padding: 10vh;
+}
+
+#middle-text h2{
+    padding: 1.5vw;
+}
+
+#middle-buttons button{
+    margin: 1vw;
+}
+
+#fresh-items {
+    text-align: center;
+}
+
+#avo-img, #mush-img, #tom-img{
+    display: block;
+    margin: auto;
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+    width: 75%;
+    height: 50%;
+}
+
+footer{
+    padding: 2vw 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+footer li{
+    display: inline;
+    text-decoration: none;
+    padding: .5vw;
+}
+
+footer img{
+    width: 3%;
+    padding: 3vh 0;
+}

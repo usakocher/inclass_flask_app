@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container" id="form-container">
+    <div class="row">
+        <aside class="col-12 col-md-6">
+            <h2>Create Your Free Account</h2>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <fieldset class="pb-2" id="email-field">
+                        {{ form.email.label }}
+                        {{ form.email(class = "form-control", placeholder = "Please Enter Email") }}
+                    </fieldset>
+                    <fieldset class="pb-3" id="password-filed">
+                        {{ form.password.label }}
+                        {{ form.password(class = "form-control", placeholder = "Please Create a Password") }}
+                    </fieldset>
+                    {{ form.submit_button(class = "btn btn-secondary btn-block") }}
+                </div>
+            </form>
+        </aside>
+    </div>
+</main>
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            var nav = document.querySelector('nav')
+
+            nav.classList.add('bg-dark', 'shadow');
+        </script>
+{% endblock content %}

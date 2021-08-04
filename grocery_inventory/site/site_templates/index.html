@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- Banner Image -->
+<div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+    <div class="content text-center">
+        <p id="main">Adam's Groceries</p>
+        <p>International Flavor, Local Prices</p>
+    </div>
+</div>
 <div class="container">
     <section class="row">
         <div class="col-12" id="middle-text">
@@ -43,4 +50,18 @@
     </div>
     <p>Adam's Groceries, &copy; 2021</p>
 </footer>
+
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            var nav = document.querySelector('nav')
+
+            window.addEventListener('scroll', function(){
+                if(window.pageYOffset > 850){
+                    nav.classList.add('bg-dark', 'shadow');
+                }else{
+                    nav.classList.remove('bg-dark', 'shadow');
+                }
+            })
+        </script>
 {% endblock content %}

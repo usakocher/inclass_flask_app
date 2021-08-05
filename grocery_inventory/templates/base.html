@@ -12,7 +12,6 @@
         <title>Adam's Grocery Inventory'</title>
     </head>
     <body>
-        <!-- Navbar -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
             <div class="container-fluid">
                 <a href="{{ url_for('site.home') }}" class="navbar-brand"><img src="../static/images/start.png" alt=""><img src="../static/images/groceries.png" alt="Logo"></a>
@@ -38,15 +37,27 @@
                             <a href="" class="nav-link text-white">Contact</a>
                         </li>
                     </ul>
+                    
                     <div class="mx-auto"></div>
-                    <ul class="buttons">
-                        <a href="{{ url_for('auth.signin') }}">
-                            <li>Sign In</li>
-                        </a>
-                        <a href="{{ url_for('auth.signup') }}">
-                            <li>Sign Up</li>
-                        </a>
-                    </ul>
+                    {% if current_user.is_authenticated %}
+                        <ul class="log-buttons mb-0">
+                            <a href="{{ url_for('site.profile') }}">
+                                <li>Profile</li>
+                            </a>
+                            <a href="{{ url_for('auth.logout') }}">
+                                <li>Log Out</li>
+                            </a>
+                        </ul>
+                    {% else %}    
+                        <ul class="buttons mb-0">
+                            <a href="{{ url_for('auth.signin') }}">
+                                <li>Sign In</li>
+                            </a>
+                            <a href="{{ url_for('auth.signup') }}">
+                                <li>Sign Up</li>
+                            </a>
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
         </nav>

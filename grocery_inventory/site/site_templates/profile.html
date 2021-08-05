@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <header class="hero-section">
+        <h3 class="header-text mb-4">Welcome to Your Profile Page</h3>
+    </header>
+    <h3 class="mb-4">Here are your Profile Details</h3>
+    <ul class="list-group">
+        <li class="list-group-item">Email: {{ current_user.email }}</li>
+        <li class="list-group-item">Token: {{ current_user.token }}</li>
+    </ul>
+</div>
+
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    var nav = document.querySelector('nav')
+
+    nav.classList.add('bg-dark', 'shadow');
+</script>
+{% endblock content %}

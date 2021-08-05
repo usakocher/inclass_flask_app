@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <!-- Banner Image -->
 <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
     <div class="content text-center">
@@ -38,7 +39,7 @@
 <footer>
     <div class="row">
         <ul>
-            <li><a href="">Home</a></li>
+            <li><a href="{{ url_for('site.home') }}">Home</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Partners</a></li>
             <li><a href="">Inventory</a></li>
@@ -57,7 +58,7 @@
             var nav = document.querySelector('nav')
 
             window.addEventListener('scroll', function(){
-                if(window.pageYOffset > 850){
+                if(window.pageYOffset > 550){
                     nav.classList.add('bg-dark', 'shadow');
                 }else{
                     nav.classList.remove('bg-dark', 'shadow');

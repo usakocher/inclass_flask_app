@@ -18,7 +18,7 @@
     font-size: 5vw;
 }
 
-.buttons a, .buttons li{
+.buttons a, .buttons li, .log-buttons a, .log-buttons li{
     display: inline;
     text-decoration: none;
     padding: .5vw;
@@ -26,6 +26,13 @@
 }
 
 .buttons a{
+    border: 2px solid white;
+    border-radius: 11px;
+    margin-right: 0.2vw;
+    margin-left: 1vw;
+}
+
+.log-buttons a:nth-last-child(1){
     border: 2px solid white;
     border-radius: 11px;
     margin-right: 0.2vw;
@@ -86,6 +93,6 @@ footer img{
     padding: 3vh 0;
 }
 
-#form-container{
-    margin-top: 15vh;
+.form-container, .hero-section{
+    margin-top: 10vh;
 }

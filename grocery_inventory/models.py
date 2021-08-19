@@ -51,28 +51,24 @@ class User(db.Model, UserMixin):
 # Creating Item table
 class Item(db.Model):
     productId = db.Column(db.String, primary_key= True)
-    brand = db.Column(db.String(50))
-    category = db.Column(db.String(25))
+    seller = db.Column(db.String(50))
+    productName = db.Column(db.String(25))
     size = db.Column(db.String)
     description = db.Column(db.String(50))
-    aisleLocation = db.Column(db.Integer)
+    unit = db.Column(db.String(50))
     price = db.Column(db.Numeric(precision = 5, scale = 2))
     countryOrigin = db.Column(db.String)
-    temperature = db.Column(db.Numeric(precision = 3, scale = 1))
-    upc = db.Column(db.String, nullable = False)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self, brand, category, size, description, aisleLocation, price, countryOrigin, temperature, upc, user_token, productId = ''):
+    def __init__(self, seller, productName, size, description, unit, price, countryOrigin, user_token, productId = ''):
         self.productId = self.set_id()
-        self.brand = brand
-        self.category = category
+        self.seller = seller
+        self.productName = productName
         self.size = size
         self.description = description
-        self.aisleLocation = aisleLocation
+        self.unit = unit
         self.price = price
         self.countryOrigin = countryOrigin
-        self.temperature = temperature
-        self.upc = upc
         self.user_token = user_token
 
     def set_id(self):
@@ -82,7 +78,7 @@ class Item(db.Model):
 # Creating marshaller
 class ItemSchema(ma.Schema):
     class Meta:
-        fields = ['productId', 'brand', 'category', 'size', 'description', 'aisleLocation', 'price', 'countryOrigin', 'temperature', 'upc', 'user_token']
+        fields = ['productId', 'seller', 'productName', 'size', 'description', 'unit', 'price', 'countryOrigin', 'user_token']
 
 item_schema = ItemSchema()
 items_schema = ItemSchema(many = True)

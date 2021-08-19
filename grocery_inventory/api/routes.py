@@ -15,18 +15,16 @@ def getdata():
 @api.route('/items', methods = ['POST'])
 @token_required
 def create_item(current_user_token):
-    brand = request.json['brand']
-    category = request.json['category']
+    seller = request.json['seller']
+    productName = request.json['productName']
     size = request.json['size']
     description = request.json['description']
-    aisleLocation = request.json['aisleLocation']
+    unit = request.json['unit']
     price = request.json['price']
     countryOrigin = request.json['countryOrigin']
-    temperature = request.json['temperature']
-    upc = request.json['upc']
     user_token = current_user_token.token
 
-    item = Item(brand, category, size, description, aisleLocation, price, countryOrigin, temperature, upc, user_token = user_token)
+    item = Item(seller, productName, size, description, unit, price, countryOrigin, user_token = user_token)
 
     db.session.add(item)
     db.session.commit()
@@ -48,8 +46,11 @@ def get_items(current_user_token):
 @token_required
 def get_item(current_user_token, id):
     item = Item.query.get(id)
-    response = item_schema.dump(item)
-    return jsonify(response)
+    if item:
+        response = item_schema.dump(item)
+        return jsonify(response)
+    else:
+        return jsonify({'Error': 'That item does not exist :('})
     
 # route to update an item
 @api.route('/items/<id>', methods = ['POST'])
@@ -57,15 +58,13 @@ def get_item(current_user_token, id):
 def update_item(current_user_token, id):
     item = Item.query.get(id)
     if item:
-        item.brand = request.json['brand']
-        item.category = request.json['category']
+        item.seller = request.json['seller']
+        item.productName = request.json['productName']
         item.size = request.json['size']
         item.description = request.json['description']
-        item.aisleLocation = request.json['aisleLocation']
+        item.unit = request.json['unit']
         item.price = request.json['price']
         item.countryOrigin = request.json['countryOrigin']
-        item.temperature = request.json['temperature']
-        item.upc = request.json['upc']
         item.user_token = current_user_token.token
 
         db.session.commit()
